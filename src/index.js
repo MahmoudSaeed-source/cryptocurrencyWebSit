@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
+import {Provider} from 'react-redux'
 import App from './App'
+import Store from './app/Store';
 import 'antd/dist/reset.css'
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import { HomePage,CryptoDetails,Cryptocurrencies,News,Exchange } from './components';
+import { HomePage,CryptoDetails,Cryptocurrencies,Exchange } from './components';
 const router = createBrowserRouter([
     {
         path: "/",
@@ -25,13 +27,10 @@ const router = createBrowserRouter([
                 element: <Exchange />
             },
             {
-                path: '/cryoto/:coinId',
+                path: '/crypto/:coinId',
                 element: <CryptoDetails />
             },
-            {
-                path: '/news',
-                element: <News />
-            },
+           
 
         ],
     },
@@ -43,5 +42,8 @@ const router = createBrowserRouter([
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router = { router }/>
+    <Provider store ={Store}>
+        <RouterProvider router={router} />
+    </Provider>
+  
 )

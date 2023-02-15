@@ -16,19 +16,19 @@ const App = () => {
                       <Outlet />
                   </div>
             </Layout>
-          </div>
-          {/* <div className='footer'>
-              <Typography.Title level={2} style={{color:'white' ,textAlign:'center'}}>
-                  cryptocurrency
+        
+          <div className='footer'>
+              <Typography.Title level={5} style={{color:'white' ,textAlign:'center'}}>
+                  Cryptocurrency
                   @All Right Reservers 
-              </Typography.Title>
+              </Typography.Title   >
               <Space>
                   <Link to='/'>Home</Link>
                   <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
                   <Link to='/exchange'>Exchange</Link>
-                  <Link to='/news'>News</Link>
                 </Space>
-          </div> */}
+        </div>
+      </div>
    </div>
   )
 }
